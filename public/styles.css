@@ -1,0 +1,18 @@
+        h1 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        p {
+            font-family:'Times New Roman', Times, serif;
+            font-style: italic;
+        }
