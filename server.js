@@ -7,11 +7,12 @@ app.use(express.static(`${__dirname}/public`))
 app.use(express.urlencoded({ extended: true }));  // For handling forms.
 app.use(express.json());  // When we want to be able to accept JSON
 
-const nunjucks = require('nunjucks');
-nunjucks.configure('public', {
-  autoescape: true,
-  express: app,
-});
+const nunjucks = require('nunjucks')
+nunjucks.configure('templates', {
+    autoescape: true,
+    express: app,
+    noCache: true
+  });
 
 let reviewRating = {
     'Pizza Hut': {
@@ -35,6 +36,7 @@ app.get('/', (req, res) => {
         restaurants: reviewRating,
   })
 });
+
   app.post('/review/:name', (req, res) => {
     const name = req.params.name
     const rating = req.body.rating
@@ -42,7 +44,18 @@ app.get('/', (req, res) => {
     res.send(`${rating}, ${review}, ${name}`)
   });
 
-  
-  app.post('/add', (req, res) => {
-
+  app.post('/review', (req, res) => {
+    const restaurant = req.body.restaurant
+    const rating = req.body.rating
+    const review = req.body.review
+    reviewRating[restaurant] = {'ratings': [rating], 'reviews': [review]}
+    res.render('index.html', {
+        restaurants: reviewRating,
   })
+  });
+
+app.delete('/delete/:name', (req, res) => {
+    const name = req.params.name
+    delete reviewRating[name]
+  res.send(`Restaurant ${name} deleted`);
+});

@@ -6,73 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restaurant List</title>
-    <link rel="stylesheet" href="styles.css">
+ <link rel="stylesheet" href="style.css">
   </head>
 
 <body>
-  <h1>Restaurant List</h1>
+  <h1>ADD A NEW RESTAURANT.</h1>
   <ul id="restaurant-list">
     <li>
-     <!-- <h2><a href="https://www.mcdonalds.com/">McDonald's</a></h2>
-      <p>Rate from 1-10.</p> -->
-<form id="mReview" action="http://localhost:4000/McDreview" method="POST">
-    Add new restaurant:
+<form id="mReview" action="/review" method="POST">
+    Restaurant's Name:
     <input type="text" name="restaurant">
-    <input type="submit">
 <br>
 <br>
     Rating (1-10):
-    <input type="text" name="rating">
-    <input type="submit">
-<br>
-<br>
-    Leave a review:
-    <input type="text" name="review" >
-    <input type="submit">
-    <br>
-    <br>
-    <button id="add">Add to list</button>
-    </li>
-  <!--  <li>
-      <h2><a href="https://www.kfc.com/">KFC</a></h2>
-      <p>Rate from 1-10.</p>
-</form>
-<form id="kReview" action="http://localhost:4000/kfcreview" method="POST">
-    Rating:
-    <input type="text" name="rating">
-    <input type="submit">
-<br>
-<br>
-    Leave a review:
-    <input type="text" name="review" >
-    <input type="submit">
-    <br>
-    <button id="add">Add to list</button>
-    </li>
-    <li>
-      <h2><a href="https://www.subway.com/">Subway</a></h2>
-      <p>Rate from 1-10.</p>
-</form>
-<form id="sReview" action="http://localhost:4000/subwayreview" method="POST">
-    Rating:
-    <input type="text" name="rating">
-    <input type="submit">
-<br>
-<br>
-    Leave a review:
-    <input type="text" name="review" >
-    <input type="submit">
-    <br>
-    <button id="add">Add to list</button>
-    </li>
-  </ul>
-</form>
-    <script src="index.js"></script>
+    <input type="number" name="rating" min="1" max="10">
 
-     Define a function to add a restaurant to another page
-    function addToList(restaurant) {
-      alert('You have added ' + restaurant + ' to your list of restaurants.');
-      <button onclick="addToList('KFC')">Add to list</button>
-    } -->
+    
+<br>
+<br>
+    Review:
+    <input type="text" name="review" >
+    <br>
+    <br>
+    <input type="submit">
+    </li>
+</form>
 </body>
 </html> 
